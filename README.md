@@ -39,3 +39,8 @@ User app: http://localhost:5173. Admin app: http://localhost:5174. API health: h
 - `GET /api/v1/admin/overview` — requires an administrator token.
 
 Administrator accounts are intentionally not creatable through the public registration endpoint. Create them through a future protected admin-management workflow or a controlled seed script.
+
+
+## Project Status
+
+🚧 Currently in Development — New features and improvements are in progress.
