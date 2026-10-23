@@ -1,0 +1,21 @@
+{
+  "name": "codepage",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=@codepage/api\" \"npm run dev --workspace=@codepage/user-web\" \"npm run dev --workspace=@codepage/admin-web\"",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "framer-motion": "^13.4.4",
+    "react-router-dom": "^7.18.4"
+  }
+}

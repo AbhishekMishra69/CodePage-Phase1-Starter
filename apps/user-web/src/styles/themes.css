@@ -1,0 +1,131 @@
+.page {
+  --text: #f5f7fa;
+  --text-secondary: #aab2c0;
+  --text-muted: #737d90;
+
+  --surface: #10151e;
+  --surface-soft: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.065);
+
+  --border: rgba(255, 255, 255, 0.09);
+
+  --accent: #8b98ff;
+  --accent-hover: #7180ff;
+  --accent-soft: rgba(139, 152, 255, 0.12);
+  --accent-glow: rgba(139, 152, 255, 0.28);
+
+  --page-background: #080b12;
+
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  --shadow-hover:
+    0 24px 70px rgba(0, 0, 0, 0.34);
+
+  --code-bg: #0b0f16;
+  --code-gutter: #0f141d;
+  --code-border: #252c39;
+  --code-text: #d7deea;
+  --code-line: #4b5565;
+}
+
+.page.theme-purple {
+  --accent: #8b98ff;
+  --accent-hover: #7180ff;
+  --accent-soft: rgba(139, 152, 255, 0.12);
+  --accent-glow: rgba(139, 152, 255, 0.28);
+}
+
+.page.theme-blue {
+  --accent: #4f8cff;
+  --accent-hover: #3d79e8;
+  --accent-soft: rgba(79, 140, 255, 0.12);
+  --accent-glow: rgba(79, 140, 255, 0.28);
+}
+
+.page.theme-green {
+  --accent: #42d392;
+  --accent-hover: #2fbd7c;
+  --accent-soft: rgba(66, 211, 146, 0.12);
+  --accent-glow: rgba(66, 211, 146, 0.28);
+}
+
+.page.theme-pink {
+  --accent: #ec6ca4;
+  --accent-hover: #d9548d;
+  --accent-soft: rgba(236, 108, 164, 0.12);
+  --accent-glow: rgba(236, 108, 164, 0.28);
+}
+
+.page.light-mode {
+  --text: #171a23;
+  --text-secondary: #4f5868;
+  --text-muted: #687286;
+
+  --surface: #ffffff;
+  --surface-soft: rgba(0, 0, 0, 0.035);
+  --surface-hover: rgba(0, 0, 0, 0.055);
+
+  --border: rgba(0, 0, 0, 0.10);
+
+  --page-background: #f5f7fb;
+
+  --shadow:
+    0 15px 45px rgba(20, 30, 50, 0.08);
+
+  --shadow-hover:
+    0 20px 55px rgba(20, 30, 50, 0.14);
+
+  --code-bg: #f7f8fa;
+  --code-gutter: #eef0f4;
+  --code-border: #d9dde5;
+  --code-text: #252b36;
+  --code-line: #9299a6;
+}
+
+.page.light-mode .navbar {
+  color: var(--text);
+}
+
+.page.light-mode .nav-links {
+  color: var(--text-secondary);
+}
+
+.page.light-mode .nav-links a:hover {
+  color: var(--text);
+}
+
+.page.light-mode .hero h1,
+.page.light-mode .stat-card span,
+.page.light-mode .popular-problem-card h3,
+.page.light-mode .topic-content h3,
+.page.light-mode .contest-feature h3,
+.page.light-mode .leader-user strong,
+.page.light-mode .footer-links h4,
+.page.light-mode .footer-logo {
+  color: var(--text);
+}
+
+.page.light-mode .popular-problem-card,
+.page.light-mode .leaderboard-card,
+.page.light-mode .auth-modal {
+  background: var(--surface);
+}
+
+.page.light-mode .topic-card,
+.page.light-mode .stat-card,
+.page.light-mode .countdown div {
+  background: var(--surface-soft);
+}
+
+.page.light-mode .code-window {
+  background: var(--code-bg);
+}
+
+.page.light-mode .window-header {
+  background: var(--code-gutter);
+}
+
+.page.light-mode .theme-toggle {
+  color: var(--text);
+}

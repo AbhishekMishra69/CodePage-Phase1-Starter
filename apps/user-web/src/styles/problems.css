@@ -1,0 +1,1097 @@
+/* =========================================================
+   PROBLEMS PAGE
+   ========================================================= */
+
+.problems-page {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 45px 0 80px;
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.problems-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.problems-header h1 {
+  margin-top: 18px;
+
+  color: var(--text);
+
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.problems-header p {
+  max-width: 650px;
+
+  margin-top: 10px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--text);
+
+  font-family: inherit;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: var(--surface-soft);
+
+  border-color: var(--accent);
+
+  color: var(--accent);
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.problem-progress {
+  min-width: 130px;
+
+  padding: 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.problem-progress span {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.problem-progress small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.problem-toolbar {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    170px
+    170px;
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.problem-search,
+.problem-filter {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.problem-search {
+  padding: 0 14px;
+}
+
+.problem-filter {
+  padding: 0 14px;
+
+  cursor: pointer;
+}
+
+.problem-search::placeholder {
+  color: var(--text-muted);
+}
+
+.problem-search:focus,
+.problem-filter:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px var(--accent-soft);
+}
+
+
+/* =========================================================
+   SEARCH WRAPPER
+   ========================================================= */
+
+.problem-search-wrapper {
+  position: relative;
+
+  min-width: 0;
+}
+
+.problem-search-wrapper .problem-search {
+  padding-left: 42px;
+  padding-right: 40px;
+}
+
+.problem-search-icon {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--text-muted);
+
+  font-size: 1.1rem;
+
+  pointer-events: none;
+}
+
+.problem-search-clear {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  width: 28px;
+  height: 28px;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: 7px;
+
+  background: var(--surface-soft);
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+.problem-search-clear:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   STATUS CONTROLS
+   ========================================================= */
+
+.problem-list-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 14px;
+}
+
+.problem-status-tabs {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 4px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--surface-soft);
+}
+
+.status-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  height: 34px;
+
+  padding: 0 11px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+  color: var(--text-muted);
+
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.status-tab span {
+  min-width: 20px;
+
+  padding: 2px 5px;
+
+  border-radius: 5px;
+
+  background: var(--border);
+  color: var(--text-muted);
+
+  font-size: 0.65rem;
+}
+
+.status-tab:hover {
+  color: var(--text);
+}
+
+.status-tab.active {
+  background: var(--surface);
+  color: var(--accent);
+
+  box-shadow: var(--shadow);
+}
+
+.status-tab.active span {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   RESULTS INFO
+   ========================================================= */
+
+.problem-results-info {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--text-muted);
+
+  font-size: 0.74rem;
+}
+
+.reset-filters-button {
+  border: 0;
+
+  background: transparent;
+  color: var(--accent);
+
+  font-family: inherit;
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.reset-filters-button:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   PROBLEMS LIST
+   ========================================================= */
+
+.problems-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   PROBLEM ROW
+   ========================================================= */
+
+.problems-page .problem-row {
+  width: 100%;
+  min-width: 0;
+  min-height: 95px;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr)
+    80px
+    max-content;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.problems-page .problem-row:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   PROBLEM NUMBER
+   ========================================================= */
+
+.problems-page .problem-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PROBLEM MAIN
+   ========================================================= */
+
+.problem-main {
+  min-width: 0;
+  width: 100%;
+}
+
+.problem-main h3 {
+  margin: 0 0 9px;
+
+  color: var(--text);
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TOPICS
+   ========================================================= */
+
+.problem-topics {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.problem-topics span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  background: var(--surface-soft);
+  color: var(--text-muted);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DIFFICULTY
+   ========================================================= */
+
+.problems-page .difficulty {
+  width: 72px;
+  min-width: 72px;
+
+  padding: 7px 8px;
+
+  border-radius: 999px;
+
+  text-align: center;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  justify-self: center;
+}
+
+.problems-page .difficulty-easy {
+  color: #22c55e;
+
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.problems-page .difficulty-medium {
+  color: #f59e0b;
+
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.problems-page .difficulty-hard {
+  color: #ef4444;
+
+  background: rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================================================
+   ROW ACTIONS
+   ========================================================= */
+
+.problem-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  width: max-content;
+  min-width: max-content;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MARK SOLVED
+   ========================================================= */
+
+.mark-solved-button {
+  width: 102px;
+  min-width: 102px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.mark-solved-button:hover {
+  border-color: #22c55e;
+
+  color: #22c55e;
+}
+
+.mark-solved-button.solved {
+  border-color: rgba(34, 197, 94, 0.25);
+
+  background: rgba(34, 197, 94, 0.08);
+
+  color: #22c55e;
+}
+
+
+/* =========================================================
+   SOLVE BUTTON
+   ========================================================= */
+
+.problems-page .solve-button {
+  width: 92px;
+  min-width: 92px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+  word-break: keep-all;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.problems-page .solve-button:hover {
+  background: var(--accent-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px var(--accent-glow);
+}
+
+.problems-page .solve-button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   SOLVED ROW
+   ========================================================= */
+
+.problem-row-solved {
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.problem-row-solved:hover {
+  border-color: #22c55e;
+}
+
+.solved-check {
+  color: #22c55e;
+
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.problems-empty {
+  padding: 70px 20px;
+
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+
+  background: var(--surface);
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 14px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  font-size: 1.4rem;
+}
+
+.problems-empty h3 {
+  margin: 0 0 7px;
+
+  color: var(--text);
+
+  font-size: 1rem;
+}
+
+.problems-empty p {
+  margin: 0 0 18px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+}
+
+.problems-empty button {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.problem-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 28px;
+}
+
+.problem-pagination > button {
+  height: 38px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--surface);
+  color: var(--text-secondary);
+
+  font-family: inherit;
+
+  font-size: 0.73rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.problem-pagination > button:hover:not(:disabled) {
+  border-color: var(--accent);
+
+  color: var(--accent);
+}
+
+.problem-pagination > button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+
+  gap: 5px;
+}
+
+.pagination-pages button {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  background: var(--surface);
+  color: var(--text-secondary);
+
+  font-family: inherit;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.pagination-pages button:hover {
+  border-color: var(--accent);
+
+  color: var(--accent);
+}
+
+.pagination-pages button.active {
+  border-color: var(--accent);
+
+  background: var(--accent);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .problems-page .problem-row {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr)
+      72px
+      max-content;
+
+    gap: 14px;
+  }
+
+  .problem-row-actions {
+    gap: 6px;
+  }
+
+  .mark-solved-button {
+    width: 96px;
+    min-width: 96px;
+  }
+
+  .problems-page .solve-button {
+    width: 88px;
+    min-width: 88px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .problem-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .problem-search-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .problems-page .problem-row {
+    grid-template-columns:
+      45px
+      minmax(0, 1fr)
+      max-content;
+
+    gap: 12px;
+  }
+
+  .problems-page .difficulty {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: center;
+  }
+
+  .problem-row-actions {
+    grid-column: 3;
+    grid-row: 2;
+
+    justify-content: flex-end;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .problems-page {
+    width: min(calc(100% - 28px), 1200px);
+
+    padding-top: 30px;
+  }
+
+  .problems-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .problems-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .problem-progress {
+    width: 100%;
+  }
+
+  .problem-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-search-wrapper {
+    grid-column: auto;
+  }
+
+  .problem-filter {
+    width: 100%;
+  }
+
+  .problems-page .problem-row {
+    grid-template-columns:
+      44px
+      minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 17px;
+  }
+
+  .problems-page .problem-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .problem-main h3 {
+    font-size: 0.95rem;
+  }
+
+  .problems-page .difficulty {
+    grid-column: 2;
+    grid-row: auto;
+
+    justify-self: start;
+  }
+
+  .problem-row-actions {
+    grid-column: 2;
+    grid-row: auto;
+
+    width: 100%;
+    min-width: 0;
+
+    justify-content: flex-start;
+  }
+
+  .mark-solved-button {
+    flex: 1;
+
+    width: auto;
+    min-width: 0;
+  }
+
+  .problems-page .solve-button {
+    flex: 0 0 auto;
+
+    width: 92px;
+    min-width: 92px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+  .problems-page {
+    width: calc(100% - 28px);
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .problem-progress {
+    width: 100%;
+  }
+
+  .problem-row {
+    padding: 15px;
+  }
+
+  .problem-main h3 {
+    font-size: 0.92rem;
+  }
+
+  .problem-topics span {
+    font-size: 0.65rem;
+
+    padding: 4px 7px;
+  }
+
+  .problem-row-actions {
+    gap: 6px;
+  }
+
+  .mark-solved-button {
+    height: 36px;
+
+    font-size: 0.68rem;
+  }
+
+  .problems-page .solve-button {
+    width: 88px;
+    min-width: 88px;
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 0.74rem;
+  }
+
+  .problem-list-controls {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .problem-status-tabs {
+    width: 100%;
+  }
+
+  .status-tab {
+    flex: 1;
+  }
+
+  .problem-results-info {
+    width: 100%;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  .problem-pagination {
+    gap: 8px;
+  }
+
+  .problem-pagination > button {
+    padding: 0 9px;
+  }
+}

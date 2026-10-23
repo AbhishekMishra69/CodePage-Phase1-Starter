@@ -1,0 +1,347 @@
+.hero {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+
+  align-items: center;
+
+  gap: 80px;
+
+  padding: 70px 0;
+}
+
+.hero-content {
+  min-width: 0;
+  max-width: 620px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 7px 12px;
+  margin-bottom: 24px;
+
+  border: 1px solid var(--accent);
+  border-radius: 50px;
+
+  color: var(--accent);
+  background: var(--accent-soft);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge span {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #42d392;
+
+  box-shadow:
+    0 0 10px rgba(66, 211, 146, 0.7);
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(58px, 7vw, 88px);
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-text {
+  max-width: 550px;
+
+  margin-top: 28px;
+
+  color: var(--text-secondary);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.hero-buttons .btn {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 42px;
+
+  margin-top: 52px;
+}
+
+.hero-trust div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.hero-trust strong {
+  color: var(--text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.hero-trust span {
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+/* =========================================
+   CODE WINDOW
+   ========================================= */
+
+.code-window {
+  width: 100%;
+  max-width: 510px;
+
+  min-width: 0;
+
+  margin-left: auto;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: var(--code-bg);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.20),
+    0 0 80px var(--accent-soft);
+}
+
+.window-header {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid var(--code-border);
+
+  background: var(--code-gutter);
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window-dots span {
+  width: 9px;
+  height: 9px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: var(--code-line);
+}
+
+.window-title {
+  margin-left: auto;
+  margin-right: auto;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+  font-family: Consolas, monospace;
+}
+
+.code-body {
+  padding: 28px 20px;
+
+  color: var(--code-text);
+
+  font-family:
+    "Fira Code",
+    Consolas,
+    monospace;
+
+  font-size: 14px;
+  line-height: 2;
+
+  overflow-x: auto;
+}
+
+.code-body > div {
+  white-space: nowrap;
+}
+
+.line-number {
+  display: inline-block;
+
+  width: 32px;
+
+  color: var(--code-line);
+}
+
+.keyword {
+  color: #c792ea;
+}
+
+.function {
+  color: #82aaff;
+}
+
+.variable {
+  color: #89ddff;
+}
+
+.code-output {
+  margin-top: 24px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(66, 211, 146, 0.15);
+  border-radius: 6px;
+
+  background: rgba(66, 211, 146, 0.05);
+
+  color: var(--text-secondary);
+}
+
+.success {
+  color: #42d392;
+
+  margin-right: 8px;
+}
+
+.runtime {
+  float: right;
+
+  color: var(--text-muted);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .code-window {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    width: min(calc(100% - 28px), 1200px);
+
+    padding: 55px 0;
+
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: 54px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-trust {
+    gap: 24px;
+  }
+
+  .code-body {
+    font-size: 12px;
+    padding: 22px 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero h1 {
+    font-size: 46px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-trust {
+    gap: 20px;
+  }
+}
