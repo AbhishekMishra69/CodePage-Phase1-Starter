@@ -1,0 +1,55 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    restart: unless-stopped
+    environment:
+      API_PORT: 5000
+      MONGODB_URI: mongodb://mongo:27017/codearena
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in the .env file}
+      JWT_EXPIRES_IN: 7d
+      CLIENT_URLS: http://localhost:8080,http://localhost:8081
+    ports:
+      - "5000:5000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  user-web:
+    build:
+      context: .
+      dockerfile: apps/user-web/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:5000/api/v1
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  admin-web:
+    build:
+      context: .
+      dockerfile: apps/admin-web/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:5000/api/v1
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    depends_on:
+      - api
+
+volumes:
+  mongo_data:

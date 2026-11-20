@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Navbar } from '../components/Navbar.jsx';
-import '../styles/Leaderboard.css';
+import '../styles/leaderboard.css';
 
 const rankings = {
   'All Time': [
