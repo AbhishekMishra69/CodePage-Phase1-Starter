@@ -7,10 +7,11 @@
     "services/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=@codepage/api\" \"npm run dev --workspace=@codepage/user-web\" \"npm run dev --workspace=@codepage/admin-web\"",
-    "build": "npm run build --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present"
-  },
+  "dev": "concurrently \"npm run dev --workspace=@codepage/api\" \"npm run dev --workspace=@codepage/user-web\" \"npm run dev --workspace=@codepage/admin-web\"",
+  "build": "npm run build --workspaces --if-present",
+  "lint": "npm run lint --workspaces --if-present",
+  "test": "npm run test --workspaces --if-present"
+},
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
